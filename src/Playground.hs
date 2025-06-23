@@ -14,3 +14,12 @@ sumFirstNumbers n = div (n * (n+1)) 2
 
 pe002 :: Int -> Int
 pe002 n = sum [m | m <- takeWhile ( < n) fibonacci, even m]
+
+
+sumFirstNumbers2 :: Int -> Int -> Int
+sumFirstNumbers2 n k =
+     let m = div n k
+     in k * m * div (m + 1) 2
+
+sumMultiplesBy3Or5 :: Int -> Int
+sumMultiplesBy3Or5 n = sumFirstNumbers2 n 3 + sumFirstNumbers2 n 5 - sumFirstNumbers2 n 15
